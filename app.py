@@ -24,5 +24,5 @@ def index():
                            publications=publications, 
                            has_more_projects=has_more_projects)
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', debug=True)
