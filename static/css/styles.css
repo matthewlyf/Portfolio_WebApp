@@ -1,0 +1,202 @@
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar-dark .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Hero Section */
+#hero {
+    height: 100vh; /* Full viewport height */
+    background: linear-gradient(to bottom, #000428, #004e92); /* Gradient background */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    overflow: hidden; /* Prevent content overflow */
+    position: relative; /* Ensure proper layering */
+}
+
+/* Animation Container */
+#animation-container {
+    position: relative; /* Create a positioning context */
+    width: 100%; /* Full width of the hero section */
+    height: 100%; /* Full height of the hero section */
+}
+
+/* Canvas Styling */
+#neuron-animation, .p5Canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width of the container */
+    height: 100%; /* Full height of the container */
+    z-index: 1; /* Behind content */
+    pointer-events: none; /* Prevent interaction issues */
+    opacity: 1; /* Ensure canvas is visible */
+}
+
+/* Hero Content Styling */
+.content {
+    position: absolute; /* Overlay content on the canvas */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Perfect centering */
+    z-index: 2; /* Above the canvas */
+    text-align: center; /* Center-align text */
+    color: #ffffff; /* High contrast */
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.7); /* Subtle shadow for readability */
+    max-width: 800px; /* Limit content width for readability */
+    padding: 0 20px; /* Optional horizontal padding */
+}
+
+.content h1 {
+    margin: 0;
+    font-size: 3.5rem; /* Adjust font size */
+    line-height: 1.2; /* Line spacing */
+}
+
+.content p {
+    margin: 20px 0;
+    font-size: 1.5rem; /* Adjust font size */
+}
+
+.content a {
+    margin-top: 20px;
+    color: #ffc107; /* Button text color */
+    border: 2px solid #ffc107; /* Button border */
+    padding: 10px 20px; /* Button padding */
+    text-decoration: none; /* Remove underline */
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.content a:hover {
+    background-color: #ffc107; /* Hover background */
+    color: #000428; /* Hover text color */
+}
+
+/* About Section */
+#about {
+    padding: 5rem 0; /* Add vertical padding */
+    background-color: #f8f9fa; /* Light background color */
+    color: #343a40; /* Dark text color */
+}
+
+.carousel {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.carousel img {
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1); /* Ensures the icons are visible on dark backgrounds */
+}
+
+.project-description {
+    color: #f8f9fa; /* Light gray or white for contrast */
+    font-size: 1rem; /* Adjust the font size if needed */
+    margin-bottom: 1rem;
+}
+
+pre {
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    max-height: 400px;
+}
+.custom-carousel {
+  position: relative;
+  height: 600px; /* Set the fixed height for the background */
+  overflow: hidden; /* Prevent content overflow */
+}
+
+.carousel-items {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto; /* Ensure content fits dynamically */
+}
+
+.carousel-item {
+  min-width: 100%;
+  flex-shrink: 0;
+  display: none;
+}
+
+.carousel-item.active {
+  display: block;
+}
+.carousel-inner img {
+    height: 400px; /* Set the fixed height */
+    object-fit: contain; /* Scale the image to fit within the container while maintaining aspect ratio */
+    width: 100%; /* Ensure the image spans the width of its container */
+}
+
+/* Publications Section */
+#publications {
+    padding: 5rem 0; /* Add vertical padding */
+    background-color: #f8f9fa; /* Light background */
+    color: #343a40; /* Dark text */
+}
+
+/* Footer */
+footer {
+    background-color: #000428;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+}
+/* About Section */
+#about {
+    background-color: #f8f9fa;
+    color: #343a40;
+}
+
+#about h2, #about h3, #about h4 {
+    color: #212529;
+    margin-bottom: 20px;
+}
+
+/* Skills Grid */
+.skills-grid img.skill-logo {
+    height: 120px; /* Fixed height for all icons */
+    width: auto; /* Automatically scale width to maintain aspect ratio */
+    object-fit: contain; /* Ensure logos do not distort */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.skills-grid img.skill-logo:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Institutes Grid */
+.institutes-grid img.institute-logo {
+    height: 100px; /* Fixed height for institute logos */
+    width: auto; /* Automatically scale width */
+    object-fit: contain;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+}
+
+.institutes-grid img.institute-logo:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+}
