@@ -85,87 +85,7 @@ body {
 
 /* About Section */
 #about {
-    padding: 5rem 0; /* Add vertical padding */
-    background-color: #f8f9fa; /* Light background color */
-    color: #343a40; /* Dark text color */
-}
-
-.carousel {
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.carousel img {
-  height: auto;
-  max-height: 400px;
-  object-fit: cover;
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  filter: invert(1); /* Ensures the icons are visible on dark backgrounds */
-}
-
-.project-description {
-    color: #f8f9fa; /* Light gray or white for contrast */
-    font-size: 1rem; /* Adjust the font size if needed */
-    margin-bottom: 1rem;
-}
-
-pre {
-    overflow-x: auto;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.9rem;
-    max-height: 400px;
-}
-.custom-carousel {
-  position: relative;
-  height: 600px; /* Set the fixed height for the background */
-  overflow: hidden; /* Prevent content overflow */
-}
-
-.carousel-items {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: auto; /* Ensure content fits dynamically */
-}
-
-.carousel-item {
-  min-width: 100%;
-  flex-shrink: 0;
-  display: none;
-}
-
-.carousel-item.active {
-  display: block;
-}
-.carousel-inner img {
-    height: 400px; /* Set the fixed height */
-    object-fit: contain; /* Scale the image to fit within the container while maintaining aspect ratio */
-    width: 100%; /* Ensure the image spans the width of its container */
-}
-
-/* Publications Section */
-#publications {
-    padding: 5rem 0; /* Add vertical padding */
-    background-color: #f8f9fa; /* Light background */
-    color: #343a40; /* Dark text */
-}
-
-/* Footer */
-footer {
-    background-color: #000428;
-    color: #ffffff;
-    text-align: center;
-    padding: 20px 0;
-}
-/* About Section */
-#about {
+    padding: 5rem 0;
     background-color: #f8f9fa;
     color: #343a40;
 }
@@ -178,13 +98,13 @@ footer {
 /* Skills Grid */
 .skills-grid img.skill-logo {
     height: 120px; /* Fixed height for all icons */
-    width: auto; /* Automatically scale width to maintain aspect ratio */
-    object-fit: contain; /* Ensure logos do not distort */
-    transition: transform 0.3s ease; /* Smooth hover effect */
+    width: auto; /* Automatically scale width */
+    object-fit: contain;
+    transition: transform 0.3s ease;
 }
 
 .skills-grid img.skill-logo:hover {
-    transform: scale(1.1); /* Slight zoom on hover */
+    transform: scale(1.1);
 }
 
 /* Institutes Grid */
@@ -199,4 +119,158 @@ footer {
 .institutes-grid img.institute-logo:hover {
     transform: scale(1.1);
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+}
+
+/* Project Section */
+#projects {
+    position: relative;
+    padding: 3rem 1rem; /* Add padding to prevent content from touching edges */
+    background: url('{{ url_for("static", filename="img/projects-bg.jpg") }}') no-repeat center center;
+    background-size: cover; /* Ensure the background scales dynamically */
+    background-attachment: scroll; /* Allow the background to scroll with the content */
+}
+
+#projects h2 {
+    margin-bottom: 3rem; /* Ensure spacing below the "My Projects" title */
+    text-align: center;
+}
+
+#projects h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center; /* Consistent alignment for all screen sizes */
+}
+
+#projects .carousel-item {
+    padding: 1.5rem 0; /* Add vertical spacing within carousel items */
+}
+
+.carousel {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.carousel img {
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1); /* Ensures the icons are visible on dark backgrounds */
+}
+
+.project-description {
+    color: #f8f9fa;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Custom Carousel */
+.custom-carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-items {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.carousel-item {
+    min-width: 100%;
+    display: none;
+}
+
+.carousel-item.active {
+    display: block;
+}
+
+.carousel-inner img {
+    height: 400px; /* Set the fixed height */
+    object-fit: contain;
+    width: 100%;
+}
+
+/* Carousel Controls Below Card */
+.carousel-controls {
+    justify-content: center; /* Center-align the controls */
+    gap: 1rem; /* Add spacing between buttons */
+    margin-top: 1rem; /* Add spacing above the controls */
+}
+
+.carousel-controls .btn {
+    min-width: 120px; /* Slightly wider buttons */
+    font-size: 1rem; /* Adjust button font size */
+    padding: 0.6rem 1.2rem; /* Comfortable padding */
+    border-radius: 50px; /* Rounded pill shape */
+    border: none; /* Remove border */
+    background: linear-gradient(to right, #004e92, #000428); /* Gradient background */
+    color: #fff; /* White text */
+    font-weight: bold; /* Bold text for better readability */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: all 0.3s ease; /* Smooth hover transition */
+}
+
+.carousel-controls .btn:hover {
+    background: linear-gradient(to right, #000428, #004e92); /* Reverse gradient */
+    transform: scale(1.05); /* Slight zoom */
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
+
+/* Publications Section */
+#publications {
+    padding: 5rem 0;
+    background-color: #f8f9fa;
+    color: #343a40;
+}
+
+/* Footer */
+footer {
+    background-color: #000428;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #hero {
+        padding: 2rem 1rem;
+    }
+
+    #projects {
+        padding: 2rem 1rem;
+        background-size: contain;
+    }
+
+    #projects h2 {
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+    }
+
+    #projects h3 {
+        font-size: 1.25rem;
+        margin-top: 1rem;
+    }
+
+    #projects .btn {
+        font-size: 0.9rem;
+        padding: 0.4rem 1rem;
+    }
+
+    .skills-grid img.skill-logo {
+        height: 100px; /* Reduce icon size on smaller screens */
+    }
+
+    .institutes-grid img.institute-logo {
+        height: 80px; /* Reduce institute logo size */
+    }
+
+    .carousel-controls .btn {
+        min-width: 100px; /* Adjust width for smaller screens */
+        font-size: 0.9rem; /* Slightly smaller text */
+    }
 }

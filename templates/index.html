@@ -115,6 +115,7 @@
 
 
 
+<!-- Projects Section -->
 <section id="projects" class="py-5 bg-dark text-light">
     <div class="container">
         <h2 class="text-center fw-bold mb-4">My Projects</h2>
@@ -124,11 +125,13 @@
                 <div class="carousel-item {% if loop.first %}active{% endif %}">
                     <div class="row align-items-center">
                         <!-- Project Details -->
-                        <div class="col-md-6">
-                            <h3 class="fw-bold">{{ project.title }}</h3>
-                            <p class="text-light">{{ project.description }}</p>
-                            <p><strong>Technologies:</strong> {{ project.technologies }}</p>
-                            <div>
+                        <div class="col-md-6 col-sm-12 mb-4">
+                            <h3 class="fw-bold text-light text-center text-md-start">{{ project.title }}</h3>
+                            <p class="text-light text-center text-md-start">{{ project.description }}</p>
+                            <p class="text-light text-center text-md-start">
+                                <strong>Technologies:</strong> {{ project.technologies }}
+                            </p>
+                            <div class="d-flex justify-content-center justify-content-md-start">
                                 {% if project.live_link %}
                                 <a href="{{ project.live_link }}" class="btn btn-primary me-2" target="_blank">Live App</a>
                                 {% endif %}
@@ -166,11 +169,16 @@
                 </div>
                 {% endfor %}
             </div>
-            <!-- Outer Controls -->
-            <div class="d-flex justify-content-between mt-4">
-                <button id="prevBtn" class="btn btn-outline-light">Previous</button>
-                <button id="nextBtn" class="btn btn-outline-light">Next</button>
-            </div>
+        </div>
+
+        <!-- Outer Controls Below Cards -->
+        <div class="d-flex carousel-controls mt-4">
+            <button id="prevBtn" class="btn" type="button" data-bs-target="#projectsCarousel" data-bs-slide="prev">
+                Previous
+            </button>
+            <button id="nextBtn" class="btn" type="button" data-bs-target="#projectsCarousel" data-bs-slide="next">
+                Next
+            </button>
         </div>
     </div>
 </section>
@@ -180,26 +188,47 @@
 <section id="publications" class="py-5 bg-light">
     <div class="container">
         <h2 class="text-center fw-bold mb-4">My Publications</h2>
-        <div class="row">
-            {% for publication in publications %}
-            <div class="col-md-6">
-                <div class="card bg-white text-dark shadow mb-4">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ publication.title }}</h5>
-                        <p class="card-text">
-                            <strong>Authors:</strong> {{ publication.authors }}<br>
-                            <strong>Journal:</strong> {{ publication.journal }}<br>
-                            <strong>Date:</strong> {{ publication.date }}
-                        </p>
-                        <p class="text-muted">{{ publication.abstract }}</p>
-                        <a href="{{ publication.link }}" class="btn btn-primary" target="_blank">Read Full Text</a>
+        <div id="publicationsCarousel" class="carousel slide" data-bs-ride="carousel">
+            <!-- Carousel Items -->
+            <div class="carousel-inner">
+                {% for publication in publications %}
+                <div class="carousel-item {% if loop.first %}active{% endif %}">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <div class="card bg-white text-dark shadow">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ publication.title }}</h5>
+                                    <p class="card-text">
+                                        <strong>Authors:</strong> {{ publication.authors }}<br>
+                                        <strong>Journal:</strong> {{ publication.journal }}<br>
+                                        <strong>Date:</strong> {{ publication.date }}
+                                    </p>
+                                    <p class="text-muted">{{ publication.abstract }}</p>
+                                    <a href="{{ publication.link }}" class="btn btn-primary" target="_blank">Read Full Text</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                {% endfor %}
             </div>
-            {% endfor %}
+
+            <!-- Outer Controls -->
+            <div class="d-flex carousel-controls">
+                <button class="btn" type="button" data-bs-target="#publicationsCarousel" data-bs-slide="prev">
+                    Previous
+                </button>
+                <button class="btn" type="button" data-bs-target="#publicationsCarousel" data-bs-slide="next">
+                    Next
+                </button>
+            </div>
         </div>
     </div>
 </section>
+
+
+
+
 <script>
 console.log("JavaScript is loaded!");
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
