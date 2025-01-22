@@ -274,3 +274,42 @@ footer {
         font-size: 0.9rem; /* Slightly smaller text */
     }
 }
+/* Social Icon Links */
+/* Remove focus outline/border for links */
+/* Remove hover styles for the icons */
+
+.icon-links {
+    display: flex;
+    justify-content: center; /* Center the icons */
+    align-items: center; /* Vertically align icons if needed */
+    margin-top: 5 px; /* Reduce space above icons */
+    gap: -100 px; /* Reduce space between icons */
+}
+.icon-links a {
+    outline: none;
+    border: none;
+    box-shadow: none; /* Ensure no box-shadow is applied */
+    transition: none; /* Disable any transition effects */
+}
+
+/* Style for the icons themselves */
+.icon-links a img {
+    width: 40px; /* Icon size */
+    height: auto;
+    margin: 0; /* Remove extra margin around icons */
+}
+/* Prevent hover effects */
+.icon-links a:hover, .icon-links a:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+    background-color: transparent; /* Ensure no background appears */
+    transform: none; /* Disable zoom or other transformations */
+}
+
+.icon-links a img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+.content p {
+    margin-bottom: -20px; /* Reduce space between the job titles and icons */
+}
