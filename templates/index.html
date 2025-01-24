@@ -169,10 +169,26 @@
                                         <img src="{{ item.src }}" class="d-block w-100 mb-3" alt="{{ item.alt }}">
                                         {% elif item.type == "code" %}
                                         <pre class="bg-light text-dark p-3 rounded shadow"><code>{{ item.content }}</code></pre>
+                                        {% elif item.type == "text" %}
+                                        <div class="text-content p-3">
+                                            <p class="bg-light text-dark p-3 rounded shadow">{{ item.content }}</p>
+                                        </div>
                                         {% endif %}
                                     </div>
                                     {% endfor %}
                                 </div>
+                                <!-- Inner Carousel Controls -->
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel{{ loop.index }}" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carousel{{ loop.index }}" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+
                                 <!-- Inner Carousel Controls -->
                                 <button class="carousel-control-prev" type="button" data-bs-target="#carousel{{ loop.index }}" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
